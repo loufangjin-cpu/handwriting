@@ -1,9 +1,5 @@
 # 文章汇总
 
-不写水文，专注输出前端优质文章。
-
-![image](https://cdn.jsdelivr.net/gh/qiruohan/qiruohan.github.io/uploads/1.jpg)
-
 ## CSS
 
 1. [重排(reflow)和重绘(repaint)](https://juejin.im/post/5e621f636fb9a07c8679083e)

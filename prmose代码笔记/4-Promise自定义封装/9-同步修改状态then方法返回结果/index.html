@@ -15,7 +15,8 @@
         //执行 then 方法
         const res = p.then(value => {
             //抛出异常
-            throw "FAIL";
+            // throw "FAIL";
+            console.log('success', value)
         }, reason=>{
             console.warn(reason);
         });

@@ -10,14 +10,15 @@
     <script>
         //实例化对象
         let p = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // resolve('OK');
-                reject('No');
-            }, 1000);
+            resolve('OK');
+            // setTimeout(() => {
+            //     resolve('OK');
+            //     // reject('No');
+            // }, 1000);
         });
 
         p.then(value => {
-            console.log(value);
+            console.log('1',value);
         }, reason=>{
             console.warn(reason);
         });
@@ -28,7 +29,7 @@
             alert(reason);
         });
 
-        console.log(p);
+        console.log('//',p);
 
 
     </script>

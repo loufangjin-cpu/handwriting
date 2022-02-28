@@ -44,6 +44,7 @@ function Promise(executor){
 
 //添加 then 方法
 Promise.prototype.then = function(onResolved, onRejected){
+    debugger
     return new Promise((resolve, reject) => {
         //调用回调函数  PromiseState
         if(this.PromiseState === 'fulfilled'){

@@ -3,14 +3,14 @@
 // 交集、并集、差集、去重
 // key ， value 都是所对应的某一项，是相同的
 
-// 1\ 添加基本类型
+// ! 1\ 添加基本类型
 // let mySet = new Set()
 // mySet.add(1)
 // mySet.add(5)
 // mySet.add(5)
 // mySet.add('some text')
 
-// 2\ 添加引用类型
+//! 2\ 添加引用类型
 // let mySet = new Set()
 
 // let o = { a: 1, b: 2 }
@@ -31,13 +31,13 @@
 
 const mySet2 = [1, 2, 3, 4, 4]
 const mySet3 = new Set([1,2,2,45])
-// 交集 两个都有的值
+//! 交集 两个都有的值
 const intersection = [...new Set(mySet2)].filter((x) => mySet3.has(x))
 
-// 差集 一个有一个没有
+//! 差集 一个有一个没有
 const difference = [...new Set(mySet2)].filter((x) => !mySet3.has(x))
 
-// 并集 (差集 + 某一个集合)
+//! 并集 (差集 + 某一个集合)
 const coll = [...new Set(mySet3), ...new Set(difference)]
 
 console.log(intersection)

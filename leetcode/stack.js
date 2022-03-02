@@ -1,5 +1,5 @@
 // ! 栈
-// 有效括号 - 栈
+//! 有效括号 - 栈
 const arrHeckBrackets = ["(", ")","{", "}", "[", "]", "}"]
 const heckBrackets = (arr) => {
   let mapInfo = {

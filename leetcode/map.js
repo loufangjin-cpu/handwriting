@@ -25,17 +25,18 @@
 // ! 3 无重复 字符的 最长子串
 // 假设初始化都为0 不重复
 // let s = "pwwkew"
-// // let s = "ababababac"
+// let s = "abba"
+// let s = "ababababac"
 // const maxChild = (s) => {
 //   let start = 0 // 滑动窗口移动
 //   let res = 0 // 最后的结果
 //   let map = new Map()
 //   for(let i=0; i< s.length; i++) {
-//     if(map.has(s[i])) {
-//       // 滑动窗口移动到重复位置的下一位
+//     if(map.has(s[i])  && map.get(s[i]) >= start) {
+ // 滑动窗口移动到重复位置的下一位
 //       start = map.get(s[i]) + 1
 //     }
-//     // 利用字典的特性， 重复的数据存入会覆盖原有的数据
+//    利用字典的特性， 重复的数据存入会覆盖原有的数据
 //     map.set(s[i], i)
 //     res = Math.max(res, i - start + 1)
 //   }

@@ -74,7 +74,7 @@
 //   }
 // }
 
-// ! leedCode: 112 路径总和 
+// ! leedCode: 112 路径总和 , 返回总和中是否等于目标值
 // 深度优先遍历
 // var hasPathSum = function(root, targetSum) {
 //   if(!root) return false

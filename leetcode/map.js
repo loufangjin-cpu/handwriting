@@ -1,6 +1,6 @@
 // !字典
 // 键值对的形式存储： 一种储存唯一的值的数据结构
-// 增删改查: set , delete, get , has
+// 增删改查: set , delete, get , has , forEach
 
 // ! code 1 两数之和 => 找对象
 // 给定目标值 target 的那 两个整数
@@ -47,3 +47,37 @@
 // 347 前K个高频元素
 // 断定出现和次数有关， 那么字典就是一个很好的方法。
 //! code - 76 最小覆盖子串 （困难）
+
+
+// map ， set 可以使用forEach (只能使用forEach)
+// map ， set 可以使用 let of 来操作对应的对象
+// Array.from() 转化成数组进行数组的一系列操作
+
+let map = new Map()
+map.set('a', 1)
+map.set('b', 2)
+map.set('c', 3)
+map.set('d', 4)
+map.set('e', 5)
+
+// map.forEach((value,key) => {
+//   console.log(value, key)
+// })
+// for(let [key, value] of map.entries()) {
+//   console.log(key , value)
+// }
+// console.log(map.entries())
+// console.log('map', map)
+let sort = Array.from(map).sort((a, b) => {
+  return b[1] - a[1]
+})
+console.log(sort.slice(0, 2).map(n => n[0]))
+
+
+let mySet = new Set()
+mySet.add('1')
+mySet.add('2')
+// console.log(mySet.entries())
+// mySet.forEach((key, value) => {
+//   console.log(key, value)
+// })

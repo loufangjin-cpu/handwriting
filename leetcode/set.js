@@ -1,5 +1,5 @@
 // ! 集合 无序唯一
-// new Set() 、detete、 has、 size
+// new Set() 、detete、 has、 size , forEach
 // 交集、并集、差集、去重
 // key ， value 都是所对应的某一项，是相同的
 

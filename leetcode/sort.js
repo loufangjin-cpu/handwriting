@@ -1,4 +1,4 @@
-// 搜索排序 重点
+// ! 搜索算法 和 排序(重点)
 // 排序
 // ● 冒泡排序、选择排序 、插入排序、归并排序、快速排序
 // ● 分析各种算法时间复杂和空间复杂度
@@ -72,28 +72,85 @@
 // 先一分为二、分到最小,然后再进合并
 // 合并的时候：进行左右对比， 每次合并可以保证左面 ， 右面的数组是一个有序的数组
 // 对有序的左右数组分别比较大小，然后进行推送 ，输出最后的值
-function merge1(arr) {
-  debugger
-  if (arr.length <= 1) return arr
-  const middle = Math.floor(arr.length / 2)
-  const left = arr.slice(0, middle)
-  const right = arr.slice(middle, arr.length)
-  // 分解得足够的小, 同时每一次的返回都是有序的
-  const orderLeft = merge1(left)
-  const orderRight = merge1(right)
-  const res = []
-  while (orderLeft.length || orderRight.length) {
-    if (orderLeft.length && orderRight.length) {
-      res.push(
-        orderLeft[0] < orderRight[0] ? orderLeft.shift() : orderRight.shift()
-      )
-    } else if (orderLeft.length) {
-      res.push(orderLeft.shift())
-    } else if (orderRight.length) {
-      res.push(orderRight.shift())
-    }
-  }
-  return res
-}
+// function merge1(arr) {
+//   debugger
+//   if (arr.length <= 1) return arr
+//   const middle = Math.floor(arr.length / 2)
+//   const left = arr.slice(0, middle)
+//   const right = arr.slice(middle, arr.length)
+//   // 分解得足够的小, 同时每一次的返回都是有序的
+//   const orderLeft = merge1(left)
+//   const orderRight = merge1(right)
+//   const res = []
+//   while (orderLeft.length || orderRight.length) {
+//     if (orderLeft.length && orderRight.length) {
+//       res.push(
+//         orderLeft[0] < orderRight[0] ? orderLeft.shift() : orderRight.shift()
+//       )
+//     } else if (orderLeft.length) {
+//       res.push(orderLeft.shift())
+//     } else if (orderRight.length) {
+//       res.push(orderRight.shift())
+//     }
+//   }
+//   return res
+// }
 
-console.log(merge1([1, 2, 3, 1, 4, 5, 6, 6, 7]))
+// console.log(merge1([1, 2, 3, 1, 4, 5, 6, 6, 7]))
+
+// 快速排序 chrome中的sort排序就是使用的快速排序
+// 随机选这一个元素， 比他小的放在左边， 比他大的放在右边，以此类推
+// const quickly = (arr) => {
+//     if(arr.length <= 1) return arr
+//     const target = arr[0]
+//     const left = arr.slice(1).filter(item => item <= target)
+//     const right = arr.slice(1).filter(item => item > target)
+//     left.length && quickly(left)
+//     left.right && quickly(right)
+//     return [...left, target, ...right]
+// }
+// console.log(quickly([1, 2, 3, 1, 4, 5, 6, 6, 7]))
+
+// !二分搜索 O(log n)
+// 前置条件是数组是有序的， 才会进行一分为二拆分逐够的小
+// 不断的移动左右长度， 终止条件是左 > 右
+// 1: 给定数组， 给定目标值， 检测数组中是否存在该目标值
+
+// const search = (arr, target) => {
+//   let left = 0
+//   let right = arr.length - 1
+//   while(left <= right) {
+//     const middle = Math.floor( (left + right) / 2)
+//     const res = arr[middle]
+//     if(target > res) {
+//       left = middle + 1
+//     } else if(target < res) {
+//       right = middle - 1
+//     } else {
+//       return middle
+//     }
+//   }
+//   return -1
+// }
+// console.log(search([1,4,5,6,67], 6))
+
+
+// ! 374 猜数字大小
+// 有序的， 考虑一分为二
+
+// !69 算法求平方根 2^n 肯定是和二分有关系
+// 二分法
+// var mySqrt = function(x) {
+//   let min = 0
+//   let max = x
+//     if(x === 1) return 1
+//   while((max - min) > 1) {
+//       let m = Math.floor((max + min) / 2)
+//       if(Math.floor((x / m) <  m)) {
+//           max = m
+//       } else {
+//           min = m
+//       }
+//   }
+//     return min
+// };

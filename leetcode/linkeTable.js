@@ -42,7 +42,7 @@ const reverse = (pre, cur) => {
 // 指向改变 =》 1.next => null  位置改变：2和1互换， 此时 cur 变成2
 //第二次 curr:2 nextTemp=>3 curr.next=>1 prev:2 cur:3 => 2.next => 1
 
-// ! 2: 两数相加
+// ! 2: 两数相加 ？
 
 // !(3)leedcode 83  删除排序链表中的重复元素
 // const delete = (head) => {
@@ -56,4 +56,20 @@ const reverse = (pre, cur) => {
 //   }
 //   return head
 // }
+// ! 21 合并两个有序链表
+// 新建一个链表， 对两个链表进行循环，较小者先进入新链表
+
 // ! (4)141 ： 环形链表
+// 给你一个链表的头节点 head ，判断链表中是否有环。
+// var hasCycle = function(head) {
+//   let p1 = head
+//   let p2 = head
+//   while(p1 && p2 && p2.next) {
+//       p1 = p1.next
+//       p2 = p2.next.next
+//       if(p1 === p2) {
+//           return true
+//       }
+//   } 
+//   return false
+// };

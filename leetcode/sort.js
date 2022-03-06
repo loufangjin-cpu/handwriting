@@ -139,7 +139,7 @@
 // 有序的， 考虑一分为二
 
 // !69 算法求平方根 2^n 肯定是和二分有关系
-// 二分法
+// 二分查找，用x/m<m 而不是 m*m>x 防止溢出
 // var mySqrt = function(x) {
 //   let min = 0
 //   let max = x
@@ -154,3 +154,4 @@
 //   }
 //     return min
 // };
+// console.log(mySqrt(8))

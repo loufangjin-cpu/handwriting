@@ -99,7 +99,7 @@
 // console.log(merge1([1, 2, 3, 1, 4, 5, 6, 6, 7]))
 
 // 快速排序 chrome中的sort排序就是使用的快速排序
-// 随机选这一个元素， 比他小的放在左边， 比他大的放在右边，以此类推
+// 随机选这一个元素，从第二位开始, 比他小的放在左边， 比他大的放在右边，以此类推
 // const quickly = (arr) => {
 //     if(arr.length <= 1) return arr
 //     const target = arr[0]

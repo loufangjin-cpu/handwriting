@@ -7,6 +7,37 @@
 // 解法1： 二分搜索，但是必须是连续的数据 O(log n)
 // 解法2: 分而治之、 分、 解 、 合 O(log n)
 
+// var guessNumber = function(n) {
+//   let left = 1
+//   let right = n
+//   while(left <= right) {
+//       let middle = Math.floor((left + right)  / 2)
+//       let res = guess(middle)
+//       if(res === 0) {
+//           return middle
+//       } else if(res === 1) {
+//           left = middle + 1
+//       } else{
+//           right = middle - 1
+//       }
+//   }
+// };
+
+// var guessNumber = (n) => {
+//   const rec = (low, high) => {
+//     if(low > high) return
+//     const mid = Math.floor((low + high) / 2)
+//     let res = guess(middle)
+//     if(res === 0) {
+//         return middle
+//     } else if(res === 1) {
+//       return rec(mid + 1, high)
+//     } else{
+//       return rec(1, mid - 1)
+//     }
+//   }
+//   return rec(1, n)
+// }
 //! 226 反转二叉树
 // 分：获取左右树、解：递归反转左右树、合：把左右树换位置放到对应的根节点上
 // var invertTree = function(root) {

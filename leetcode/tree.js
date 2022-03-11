@@ -24,7 +24,7 @@
 //      return max
 // };
 // ! leedCode: 111 二叉树的最小深度
-// 广度遍历
+// 广度优先搜索的性质保证了最先搜索到的叶子节点的深度一定最小。
 // var minDepth = function(root) {
 //   if(!root) return 0
 //   const que = [[root, 1]]
@@ -43,7 +43,8 @@
 // };
 
 // ! leedCode: 94 二叉树的中序遍历
-// 使用递归 和 使用栈
+// 使用递归: 挨个从顶节点开始递归，根节点放在左右递归的中间
+// 迭代版: 栈从根开始全部入栈左节点，然后挨个栈顶出栈推到数组,再挨个寻找右节点。
 // const middle = (root) => {
 //   let res = []
 // const middleDeep  = (root) => {
@@ -94,3 +95,41 @@
 //   sum(root, root.val)
 //   return res
 // };
+
+// ! 589. N 叉树的前序遍历
+// 二叉树只有左右， N 叉树那就用children来表示
+// 时间复杂和空间复杂都是o(n)
+// 第一种方式是递归、 第二种方式是迭代(栈)
+// 思路：递归: push节点， 然后遍历所有的子节点，以此递归处理
+// 栈: 先进后出原则，根先入，然后取出根对其遍历，
+// 让子节点依次从右到左进行入栈，保证出栈的时候左先出。
+
+
+// var preorder = function(root) {
+//   const res = [];
+//   if (root == null) {
+//       return res;
+//   }
+
+//   const stack = [];
+//   stack.push(root);
+//   while (stack.length) {
+//       const node = stack.pop();
+//       res.push(node.val);
+//       for (let i = node.children.length - 1; i >= 0; --i) {
+//           stack.push(node.children[i]);
+//       }
+//   }
+//   return res;
+// };
+
+// ! 101. 对称二叉树
+// 递归: 拿出根的左右节点依次递归做对比
+// 左右对比 考虑到广度遍历使用队列，先进先出原则进一一对比，造成两棵树进行对比
+// 进入: 一棵树节点的左 和 一颗树节点 右分别进入， 一棵树节点的右 和 一颗树节点左分别进入
+// 出队: 拿出队投的两个值进行比较， 最后队列长度没有就true， 否则任何一个地方放不想等返回false
+
+// ! 108. 将有序数组转换为二叉搜索树
+// 有序数组 => 满足中序排序
+// 将有序数组每次都以中间的节点作为根节点，进行左右依次递归处理
+
